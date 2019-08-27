@@ -1,0 +1,7 @@
+Naive Bayes algorithm:
+For obtaining linear decision surfaces
+
+from sklearn.naive_bayes import GaussianNB (import clasiffiying function)
+clf = GaussianNB()(create clasificatory function)
+clf.fit(X, Y)(fits the function to our features and labels)
+predict(self, X)(we call for a prediction)
