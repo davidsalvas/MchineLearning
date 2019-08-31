@@ -3,5 +3,48 @@ For obtaining linear decision surfaces
 
 from sklearn.naive_bayes import GaussianNB (import clasiffiying function)
 clf = GaussianNB()(create clasificatory function)
-clf.fit(X, Y)(fits the function to our features and labels)
+clf.fit(X, Y)(fits the function to our features X and labels Y)
 predict(self, X)(we call for a prediction)
+clf.score(X) returns accuracy of given data and labels
+
+
+### Inferencia
+
+Bayes Rule
+
+Calculate the probability of occurring an event given some test that depending on its outcome gives more or less certainty of that event occurring...
+
+Example:
+
+Probability of a certain type of cancer is 0.01 among all the population.
+If a test is run a positive test gives 0.9 probability of cancer and 0.1 on no cancer
+A negative test gives however 0.9 probability of not having cancer and 0.1 of having
+
+Which is the probability of actually having cancer if the test is positive?
+
+Prior probabilities:
+
+P(C) = 0.01 "probability of cancer"
+P(Pos / C) = 0.9 "provability of cancer with positive test"
+P(Neg / C) = 0.1 "provability of cancer with negative test"
+P(Pos / NC) = 0.1 "provability of positive test without cancer"
+P(Neg / NC) = 0.9 "provability of negative test without cancer"
+
+Joint probabilities:
+
+P(C / Pos) = P(C) * P(Pos / C) = 0.009 "Probability of having cancer with a positive test"
+P(NC / Pos) = P(NC) * P(Pos / NC) = 0.099 "Provability of no cancer with positiove test"
+
+Normalizer:
+
+Norm = P(C / Pos) + P(NC / Pos) = 0.108
+
+Posterior probability:
+
+P(C / Pos) = P(C / Pos)/Norm = 0.0833
+P(NC / Pos) = P(NC / Pos)/Norm = 0.9167
+
+Probability of cancer with positive result = P(C / Pos) = 0.0833
+Probability of no cancer with negative result = P(NC / Pos) = 0.9167
+
+
