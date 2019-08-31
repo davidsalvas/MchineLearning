@@ -47,4 +47,25 @@ P(NC / Pos) = P(NC / Pos)/Norm = 0.9167
 Probability of cancer with positive result = P(C / Pos) = 0.0833
 Probability of no cancer with negative result = P(NC / Pos) = 0.9167
 
+Naive Bayes when to use:
 
+Example email clasiffication:
+
+The probability of an email being sent by person A or B given the probability of A or B using certain words
+should be = the total probability of A or B sending the email multiplied by the probability of each word
+Prob (A) = P(A) * P(A / word1)^n.times * P(A / word2)^n.times...ç
+Normalizer = P(A)+P(B)
+Real probability (A) = P(A) / Normalizer
+
+This means that the algorithm does not take into account for example word order so if
+word order is relevant in our problem the algorithm wont work (*)
+
+Pros:
+- Easy to implement
+- Efficient
+- Really accurate depending on the problem
+
+Cons:
+- It may fail depending on the problem(*)
+
+  
